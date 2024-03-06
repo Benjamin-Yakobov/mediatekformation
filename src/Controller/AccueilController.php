@@ -24,7 +24,7 @@ class AccueilController extends AbstractController{
      */
     public function __construct(FormationRepository $repository) {
         $this->repository = $repository;
-    }   
+    }
     
     /**
      * @Route("/", name="accueil")

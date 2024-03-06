@@ -15,6 +15,8 @@ use Symfony\Component\Routing\Annotation\Route;
  * @author emds
  */
 class PlaylistsController extends AbstractController {
+
+    public const ROUTE_PLAYLISTS = "pages/playlists.html.twig";
     
     /**
      * 
@@ -32,9 +34,9 @@ class PlaylistsController extends AbstractController {
      * 
      * @var CategorieRepository
      */
-    private $categorieRepository;    
+    private $categorieRepository;
     
-    function __construct(PlaylistRepository $playlistRepository, 
+    function __construct(PlaylistRepository $playlistRepository,
             CategorieRepository $categorieRepository,
             FormationRepository $formationRespository) {
         $this->playlistRepository = $playlistRepository;
@@ -49,9 +51,9 @@ class PlaylistsController extends AbstractController {
     public function index(): Response{
         $playlists = $this->playlistRepository->findAllOrderByName('ASC');
         $categories = $this->categorieRepository->findAll();
-        return $this->render("pages/playlists.html.twig", [
+        return $this->render($this::ROUTE_PLAYLISTS, [
             'playlists' => $playlists,
-            'categories' => $categories            
+            'categories' => $categories
         ]);
     }
 
@@ -68,11 +70,11 @@ class PlaylistsController extends AbstractController {
                 break;
         }
         $categories = $this->categorieRepository->findAll();
-        return $this->render("pages/playlists.html.twig", [
+        return $this->render($this::ROUTE_PLAYLISTS, [
             'playlists' => $playlists,
-            'categories' => $categories            
+            'categories' => $categories
         ]);
-    }          
+    }
 	
     /**
      * @Route("/playlists/recherche/{champ}/{table}", name="playlists.findallcontain")
@@ -85,13 +87,13 @@ class PlaylistsController extends AbstractController {
         $valeur = $request->get("recherche");
         $playlists = $this->playlistRepository->findByContainValue($champ, $valeur, $table);
         $categories = $this->categorieRepository->findAll();
-        return $this->render("pages/playlists.html.twig", [
+        return $this->render($this::ROUTE_PLAYLISTS, [
             'playlists' => $playlists,
-            'categories' => $categories,            
+            'categories' => $categories,
             'valeur' => $valeur,
             'table' => $table
         ]);
-    }  
+    }
     
     /**
      * @Route("/playlists/playlist/{id}", name="playlists.showone")
@@ -106,7 +108,7 @@ class PlaylistsController extends AbstractController {
             'playlist' => $playlist,
             'playlistcategories' => $playlistCategories,
             'playlistformations' => $playlistFormations
-        ]);        
-    }       
+        ]);
+    }
     
 }
