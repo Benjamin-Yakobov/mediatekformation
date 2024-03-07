@@ -33,6 +33,11 @@
                         </select>                    
                     </form>            
                 </th>
+                <th>
+                    {# Boutons permettant le tri croissant et decroissant des playlists en fonction du nombre de formation #}
+                    <a href="{{ path('playlists.sort', {champ:'numberFormation', ordre:'ASC'}) }}" class="btn btn-info btn-sm active" role="button" aria-pressed="true"><</a>
+                    <a href="{{ path('playlists.sort', {champ:'numberFormation', ordre:'DESC'}) }}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">></a>
+                </th>
                 <th class="text-center align-top" scope="col">
                     &nbsp;
                 </th>				
@@ -55,7 +60,11 @@
                                     &nbsp;{{ categories[c] }}                                  
                                 {% endfor %}
                             {% endif %}
-                        </td>            					
+                        </td>
+                        <td>
+                            {# Affichage du nombre de formation dans la playlist #}
+                            {{ playlists[k].formations|length }}
+                        </td>
                         <td class="text-center">
                             <a href="{{ path('playlists.showone', {id:playlists[k].id}) }}" class="btn btn-secondary">Voir détail</a>
                         </td> 					
