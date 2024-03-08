@@ -91,7 +91,6 @@ class FormationsController extends AbstractController {
         $formation = $this->formationRepository->find($id);
         return $this->render($this::ROUTE_FORMATIONS, [
             'formation' => $formation
-        ]);        
-    }   
-    
+        ]);
+    }
 }

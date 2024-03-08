@@ -1,0 +1,70 @@
+{% extends "baseadmin.html.twig" %}
+
+{% block body %}
+    <div style="text-align: center; padding: 20px">
+        <button style="text-align: center" onclick="window.location.href = '{{ path('admin.formation.ajout') }}';"> Ajouter un formation </button>
+    </div>
+
+    <table>
+        <caption>Tableau d'administration des formations</caption>
+        <tr>
+            <th>
+                Formations<br>
+                <a href="{{ path('admin.formation.sort', {champ:'title', ordre:'ASC'}) }}"><</a>
+                <a href="{{ path('admin.formation.sort', {champ:'title', ordre:'DESC'}) }}">></a>
+                <form method="POST" action="{{ path('admin.formation.rechercher', {champ:'title'}) }}">
+                    <input name="rechercher" placeholder="Formations" >
+                    <button type="submit">Filtrer</button>
+                </form>
+            </th>
+            <th>
+                Playlists<br>
+                <a href="{{ path('admin.formation.sort', {champ:'playlist', ordre:'ASC'}) }}"><</a>
+                <a href="{{ path('admin.formation.sort', {champ:'playlist', ordre:'DESC'}) }}">></a>
+                <form method="POST" action="{{ path('admin.formation.rechercher', {champ:'name', table:'playlist'}) }}">
+                    <input name="rechercher" placeholder="Playlists">
+                    <button type="submit">Filtrer</button>
+                </form>
+            </th>
+            <th>
+                <form method="POST" action="{{ path('admin.formation.rechercher', {champ:'id', table:'categories'}) }}">
+                    <label for="rechercher">Categorie</label>
+                    <select id="rechercher" name="rechercher" onchange="this.form.submit()">
+                        <option value=""></option>
+                        {% for categorie in categories %}
+                            <option
+                                    {% if id_categorie|default and id_categorie==categorie.id %}
+                                        selected
+                                    {% endif %}
+                                    value="{{ categorie.id }}">
+                                {{ categorie.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </th>
+            <th>
+                Dates<br>
+                <a href="{{ path('admin.formation.sort', {champ:'publishedAt', ordre:'ASC'}) }}"><</a>
+                <a href="{{ path('admin.formation.sort', {champ:'publishedAt', ordre:'DESC'}) }}">></a>
+            </th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+
+        {% for formation in formations %}
+            <tr>
+                <td>{{ formation.title }}</td>
+                <td>{{ formation.playlist.name }}</td>
+                <td>
+                    {% for categorie in formation.categories %}
+                        {{ categorie.name }}
+                    {% endfor %}
+                </td>
+                <td>{{ formation.getPublishedAtString }}</td>
+                <td><a href="{{ path('admin.formation.modifier', {id:formation.id}) }}">Modifier</a></td>
+                <td><a href="{{ path('admin.formation.supprimer', {id:formation.id}) }}" onclick="return confirm('Voulez-vous supprimer la formation {{ formation.title }} ?')">Supprimer</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -52,5 +52,23 @@ E
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+b
+2src/Controller/Admin/AdminFormationsController.php,8\e\8e2efda746aca3a8a1c6b6709a03c3314bba74f5
+Z
+*templates/Admin/admin_formations.html.twig,1\6\16bc9eae069357ddc563e4b334f876b183238343
+M
+templates/baseadmin.html.twig,7\9\7913530b33d22b949511596c0ae8216203637a46
+J
+src/Form/FormationType.php,a\5\a5fe379d94784d41506bbb91b38b1de3fe10d901
+^
+.templates/Admin/admin_formation_edit.html.twig,d\8\d8a4e7ede0e75c96063813d442b24af6b9342e5f
+Y
+)templates/_admin_formation_form.html.twig,a\9\a99bfb9cbb34e1776f8e6fc81784424d1adb5060
 N
-templates/pages/test.html.twig,0\0\007cb181806b523e29ceaf9af7801182af5cff78
+config/packages/framework.yaml,d\f\df607fe73ff82c569824a7392edf5e760e998efe
+D
+config/services.yaml,8\7\87042d1f46b57381244d70e7a42feeb7710727dc
+I
+config/packages/twig.yaml,8\a\8a5c55d47e428b829ef7645f00a0b768cef8a5bf
+B
+config/routes.yaml,b\a\baef02989dedf0ec859f7bce087a69f29bef2b72
