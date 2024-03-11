@@ -1,0 +1,39 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title_top %}<h1>Gestion des categories</h1>{% endblock %}
+
+{% block body %}
+
+    {% for flash_message in app.flashes('error_suppression_categorie') %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ flash_message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+
+    <table>
+        <caption>Tableau d'administration des categories</caption>
+        <thead>
+            <tr>
+                <th>Categories &nbsp;</th>
+                <th>Supprimer &nbsp;</th>
+                <th>
+                    <form method="POST" action="{{ path('admin.categorie.ajouter') }}">
+                        <div>
+                            <input name="valeur" placeholder="Categorie">
+                            <button type="submit">Ajouter</button>
+                        </div>
+                    </form>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for categorie in categories %}
+                <tr>
+                    <td>{{ categorie.name }}</td>
+                    <td><a href="{{ path('admin.categories.supprimer', {id:categorie.id}) }}" onclick="return confirm('Voulez vous supprimer la categorie {{ categorie.name }}')">Supprimer</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

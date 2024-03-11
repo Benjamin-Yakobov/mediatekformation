@@ -57,3 +57,9 @@ X
 public/index.php,0\e\0e61f67641b441bb3ee38e903c594d99cafa14b4
 b
 2templates/Admin/admin_formation_modifier.html.twig,3\d\3d17e8599d72c4c1a49cb6ab9b9688fb1000580c
+b
+2src/Controller/Admin/AdminCategoriesController.php,d\d\dd0e1d278878024d4c19ab5df4ab39d6973b2f4b
+V
+&src/Repository/CategorieRepository.php,9\0\9004acb7e4bb51b1613901806482558853d437f3
+Z
+*templates/Admin/admin_categories.html.twig,3\2\323b1eca98138b0f5c6583458d0486d8d73603ac
