@@ -1,0 +1,10 @@
+{% extends 'baseadmin.html.twig' %}
+{% block body %}
+    <h1>{{ title }}</h1>
+    {{ include('_admin_playlist_form.html.twig') }}
+
+    {% for formation in formations %}
+        {{ formation }}<br>
+    {% endfor %}
+
+{% endblock %}

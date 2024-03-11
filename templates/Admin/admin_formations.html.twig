@@ -1,5 +1,5 @@
 {% extends "baseadmin.html.twig" %}
-
+{% block title_top %}<h1>Gestion des formations</h1>{% endblock %}
 {% block body %}
     <div style="text-align: center; padding: 20px">
         <button style="text-align: center" onclick="window.location.href = '{{ path('admin.formation.ajout') }}';"> Ajouter un formation </button>

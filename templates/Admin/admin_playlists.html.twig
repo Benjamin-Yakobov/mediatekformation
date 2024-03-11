@@ -1,0 +1,73 @@
+{% extends 'baseadmin.html.twig' %}
+{% block title_top %}<h1>Gestion des playlists</h1>{% endblock %}
+{% block body %}
+
+
+    <div style="text-align: center; padding: 20px">
+        <button onclick="window.location.href = '{{ path('admin.playlists.ajouter') }}' ">Ajouter une playlist</button>
+    </div>
+
+
+    {% for flash_message in app.flashes('playlist_request') %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ flash_message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+    <table>
+        <caption>Tableau d'administration des playlists</caption>
+        <thead>
+            <tr>
+                <th>
+                    Playlists
+                    <a href="{{ path('admin.playlists.sort', {champ:'name', ordre:'ASC'}) }}" ><</a>
+                    <a href="{{ path('admin.playlists.sort', {champ:'name', ordre:'DESC'}) }}">></a>
+                    <form method="POST" action="{{ path('admin.playlists.rechercher', {champ:'name'}) }}">
+                       <div>
+                           <input name="valeur" placeholder="Playlist">
+                           <button type="submit">Rechercher</button>
+                       </div>
+                    </form>
+                </th>
+                <th>
+                    Categories
+                    <form method="POST" action="{{ path('admin.playlists.rechercher', {champ:'id', table:'categories'}) }}">
+                        <select name="valeur" id="recherche" onchange="this.form.submit()">
+                            <option value=""></option>
+                            {% for categorie in categories %}
+                                <option
+                                        value="{{ categorie.id }}">{{ categorie.name }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </th>
+                <th>
+                    <a href="{{ path('admin.playlists.sort', {champ:'numberFormations', ordre:'ASC'}) }}" ><</a>
+                    <a href="{{ path('admin.playlists.sort', {champ:'numberFormations', ordre:'DESC'}) }}">></a> <br>
+                    Nombre de formations &nbsp;
+
+                </th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for playlist in playlists %}
+                <tr>
+                    <td>{{ playlist.name }}</td>
+                    <td>
+                        {% set categories_playlist = playlist.categoriesPlaylist %}
+                        {% for categorie in  categories_playlist %}
+                            &nbsp; {{ categorie }}
+                        {% endfor %}
+                    </td>
+                    <td> &nbsp; {{ playlist.formations|length }}</td>
+                    <td><a href="{{ path('admin.playlists.modifier', {id:playlist.id}) }}">Modifier</a></td>
+                    <td><a href="{{ path('admin.playlists.supp', {id:playlist.id}) }}" onclick="return confirm('Voulez-vous supprimer la formation {{ playlist.name }} ?')">Supprimer</a></td>
+                </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+
+{% endblock %}

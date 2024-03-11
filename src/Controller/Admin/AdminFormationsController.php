@@ -53,6 +53,7 @@ class AdminFormationsController extends AbstractController
      */
     public function modifierFormation(Formation $formation, Request $request ) : Response
     {
+        $title = "Modifier une formation";
         $formFormation = $this->createForm(FormationType::class, $formation);
         $formFormation->handleRequest($request);
         if ($formFormation->isSubmitted() && $formFormation->isValid()) {
@@ -60,7 +61,8 @@ class AdminFormationsController extends AbstractController
             return $this->redirectToRoute('admin.formations');
         }
 
-        return $this->render("Admin/admin_formation_edit.html.twig", [
+        return $this->render("Admin/admin_formation_modifier.html.twig", [
+            'title' => $title,
             'formation' => $formation,
             'formFormation' => $formFormation->createView()
         ]);
@@ -107,6 +109,7 @@ class AdminFormationsController extends AbstractController
      */
     public function ajout(Request $request ) : Response
     {
+        $title = "Ajouter une formation";
         $formation = new Formation();
         $formFormation = $this->createForm(FormationType::class, $formation);
         $formFormation->handleRequest($request);
@@ -116,7 +119,8 @@ class AdminFormationsController extends AbstractController
             return $this->redirectToRoute('admin.formations');
         }
 
-        return $this->render("Admin/admin_formation_edit.html.twig", [
+        return $this->render("Admin/admin_formation_modifier.html.twig", [
+            'title' => $title,
             'formation' => $formation,
             'formFormation' => $formFormation->createView()
         ]);
