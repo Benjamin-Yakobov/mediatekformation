@@ -4,7 +4,11 @@
 {% block stylesheets %}{% endblock %}
 {% block javascripts %}{% endblock %}
 {% block top %}
+    <div style="text-align: right; padding: 20px">
+        <a href="{{ path('logout') }}">Log out</a>
+    </div>
     <div class="text-center">
+
         {% block title_top %}{% endblock %}
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
