@@ -1,0 +1,5 @@
+
+kphp:S103,"KSplit this 123 characters long line (which is greater than 120 authorized).(ú÷ŠÐýÿÿÿÿ8«ñãÐã1
+}php:S116"]Rename this field "$CategorieRepository" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(øÙ¾Ãÿÿÿÿÿ8¬ñãÐã1
+:php:S113"'Add a new line at the end of this file.8­ñãÐã1
+~php:S117"cRename this parameter "$CategorieRepository" to match the regular expression ^[a-z_][a-zA-Z0-9_]*$.(ÎàžÍ8­ñãÐã1

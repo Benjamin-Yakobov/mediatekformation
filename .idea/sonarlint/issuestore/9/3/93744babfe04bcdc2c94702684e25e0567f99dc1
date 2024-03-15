@@ -1,0 +1,6 @@
+
+‡	php:S1131g"@Remove the useless trailing whitespaces at the end of this line.(©é™¥úÿÿÿÿ8Ç©ÆÂã1J$92eae994-d563-452a-8210-c299baa0d8f1
+~php:S105"EReplace all tab characters in this file by sequences of white-spaces.8È©ÆÂã1J$09d23158-c461-4f1d-8641-6bf1ca7931f3
+q	php:S1066]"/Merge this if statement with the enclosing one.(”®Ýß8É©ÆÂã1J$07d75b6b-eb3d-458f-bed4-5a1d69867bfa
+ž	php:S3973m"\Use curly braces or indentation to denote the code conditionally executed by this "foreach".(’þüÓ8Î©ÆÂã1J$08642e76-9654-4b28-aff4-4451ad33bb91
+qphp:S121m"0Add curly braces around the nested statement(s).(’þüÓ8Ï©ÆÂã1J$bb37e51b-912a-4141-ae12-0ccf6e123c45
