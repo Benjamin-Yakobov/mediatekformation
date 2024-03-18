@@ -3,7 +3,10 @@
 {% block title %}{% endblock %}
 {% block stylesheets %}{% endblock %}
 {% block top %}
-    <a href="{{ path('oauth.login') }}">Login-Admin</a>
+    <div style="padding: 20px; text-align: right">
+        <a href="{{ path('oauth.login') }}" class="btn btn-primary">Login-Admin</a>
+    </div>
+
     <div class="container">
         <!-- titre -->
         <div class="text-left">
