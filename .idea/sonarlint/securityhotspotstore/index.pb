@@ -126,3 +126,5 @@ N
 config/packages/validator.yaml,d\8\d87ace3c9cf646c28e05e6aac383e4fc147f0b74
 o
 ?vendor/symfony/dependency-injection/Attribute/Autoconfigure.php,2\8\28d8d94098f6afde2388eb79af1954fd2151c429
+@
+public/.htaccess,c\9\c9fe70f275af093c7fb3ed73b451fadc91069bac
