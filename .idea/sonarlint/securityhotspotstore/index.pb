@@ -122,3 +122,7 @@ Z
 -tests/Controller/FormationsControllerTest.php,c\4\c492c08db4620ca99c405622506ed2c423936f01
 \
 ,tests/Controller/PlaylistsControllerTest.php,2\a\2a17d17b0f2805d5187f2639a3ce8f848521e146
+N
+config/packages/validator.yaml,d\8\d87ace3c9cf646c28e05e6aac383e4fc147f0b74
+o
+?vendor/symfony/dependency-injection/Attribute/Autoconfigure.php,2\8\28d8d94098f6afde2388eb79af1954fd2151c429

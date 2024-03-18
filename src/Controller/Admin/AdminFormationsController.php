@@ -13,8 +13,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdminFormationsController extends AbstractController
 {
+
+    /**
+     * @var FormationRepository
+     */
     private $FormationRepository;
 
+    /**
+     * @param FormationRepository $FormationRepository
+     * @param CategorieRepository $CategorieRepository
+     */
     public function  __construct( FormationRepository $FormationRepository, CategorieRepository $CategorieRepository)
     {
         $this->FormationRepository = $FormationRepository;
@@ -23,13 +31,14 @@ class AdminFormationsController extends AbstractController
 
     /**
      * @Route("/admin/formations", name="admin.formations")
+     * @return Response
      */
     public function index(): Response
     {
         $categories = $this->CategorieRepository->findAll();
         $formtaions = $this->FormationRepository->findAll();
 
-        return $this->render('admin/admin_formations.html.twig', [
+        return $this->render('Admin/admin_formations.html.twig', [
             'formations' => $formtaions,
             'categories' => $categories
         ]);
@@ -49,6 +58,8 @@ class AdminFormationsController extends AbstractController
 
     /**
      * @Route("/admin/formation/modifier/{id}", name="admin.formation.modifier")
+     * @param Formation $formation
+     * @param Request $request
      * @return Response
      */
     public function modifierFormation(Formation $formation, Request $request ) : Response
@@ -88,6 +99,9 @@ class AdminFormationsController extends AbstractController
 
     /**
      * @Route("/admin/formations/rechercher/{champ}/{table}", name="admin.formation.rechercher")
+     * @param Request $request
+     * @param $champ
+     * @param $table
      * @return Response
      */
     public function findAllContaining(Request $request, $champ, $table="") : Response
@@ -105,6 +119,7 @@ class AdminFormationsController extends AbstractController
 
     /**
      * @Route("/admin/formations/ajout", name="admin.formation.ajout")
+     * @param Request $request
      * @return Response
      */
     public function ajout(Request $request ) : Response

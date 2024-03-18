@@ -1,0 +1,8 @@
+
+\	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8ÐˆÝ€ä1
+\	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8ÐˆÝ€ä1
+\	php:S1131""@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8ÑˆÝ€ä1
+Xphp:S105"EReplace all tab characters in this file by sequences of white-spaces.8ÑˆÝ€ä1
+e	php:S1784'"DExplicitly mention the visibility of this constructor "__construct".(•¾€Îüÿÿÿÿ8ÒˆÝ€ä1
+i	php:S1301C"MReplace this "switch" statement with "if" statements to increase readability.(“à»õ8ÓˆÝ€ä1
+Rphp:S131C"7Add a "case default" clause to this "switch" statement.(“à»õ8ÔˆÝ€ä1

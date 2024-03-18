@@ -22,6 +22,7 @@ class AdminPlaylistsController extends AbstractController
 
     /**
      * @param PlaylistRepository $PlaylistRepository
+     * @param CategorieRepository $CategorieRepository
      */
     public function __construct(PlaylistRepository $PlaylistRepository, CategorieRepository $CategorieRepository)
     {
@@ -47,6 +48,7 @@ class AdminPlaylistsController extends AbstractController
 
     /**
      * @Route ("/admin/playlists/{id}/supp", name="admin.playlists.supp")
+     * @param Playlist $playlist
      * @return Response
      */
     public function supprimerPlaylist(Playlist $playlist ) : Response
@@ -63,6 +65,8 @@ class AdminPlaylistsController extends AbstractController
 
     /**
      * @Route ("/admin/playlists/{id}/modifier", name="admin.playlists.modifier")
+     * @param Playlist $playlist
+     * @param Request $request
      * @return Response
      */
     public function modifierPlaylist(Playlist $playlist, Request $request ) : Response
@@ -86,6 +90,7 @@ class AdminPlaylistsController extends AbstractController
 
     /**
      * @Route ("/admin/playlists/ajouter", name="admin.playlists.ajouter")
+     * @param Request $request
      * @return Response
      */
     public function ajout(Request $request): Response {
@@ -109,7 +114,10 @@ class AdminPlaylistsController extends AbstractController
 
     /**
      * @Route ("/admin/playlists/rechercher/{champ}/{table}", name="admin.playlists.rechercher")
-     * @return void
+     * @param Request $request
+     * @param $champ
+     * @param $table
+     * @return Response
      */
     public function findAllContaining(Request $request, $champ, $table = "") : Response
     {
@@ -125,6 +133,8 @@ class AdminPlaylistsController extends AbstractController
 
     /**
      * @Route ("/admin/playlists/sort/{champ}/{ordre}", name="admin.playlists.sort")
+     * @param $champ
+     * @param $ordre
      * @return Response
      */
     public function sort($champ, $ordre): Response{

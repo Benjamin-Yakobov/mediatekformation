@@ -1,3 +1,6 @@
 
-Œphp:S103 "KSplit this 127 characters long line (which is greater than 120 authorized).(¶©¶»8ˆ«şşâ1J$8699fb62-f055-47f8-8f43-1818163d43e1
-`php:S113"'Add a new line at the end of this file.8‰«şşâ1J$97e50c3a-a098-415a-9f01-e13d91f0d8bd
+‡	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(Ù²§éúÿÿÿÿ8ÆŒ„ä1J$91190f1b-7726-4ab8-b9fb-baeb5d352f81
+a	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(®û×¢üÿÿÿÿ8÷Ú„ä1
+a	php:S1131 "@Remove the useless trailing whitespaces at the end of this line.(ÜëºÔúÿÿÿÿ8÷Ú„ä1
+Œphp:S103)"KSplit this 127 characters long line (which is greater than 120 authorized).(¶©¶»8À†Ğ€ä1J$73bc1d54-77ac-4fae-904f-99f11b7dec84
+`php:S113"'Add a new line at the end of this file.8Á†Ğ€ä1J$ba56854f-5c9e-49ae-8a55-cad949541675

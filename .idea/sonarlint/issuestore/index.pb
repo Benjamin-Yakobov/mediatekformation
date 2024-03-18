@@ -65,3 +65,15 @@ S
 #templates/pages/formation.html.twig,3\e\3ece7196d4cee44d63b0477ad17854fda48f3076
 S
 #templates/pages/playlists.html.twig,8\3\836472b83548424299eea8075d29dae0023b358b
+V
+&src/Controller/PlaylistsController.php,3\e\3eee6a5fd38db39b73f76c16e91f5b0c75dd0cfb
+b
+2src/Controller/Admin/AdminFormationsController.php,8\e\8e2efda746aca3a8a1c6b6709a03c3314bba74f5
+a
+1src/Controller/Admin/AdminPlaylistsController.php,7\4\744239bbcbe8c9935272bd6d68fef641f67a3052
+N
+config/packages/validator.yaml,d\8\d87ace3c9cf646c28e05e6aac383e4fc147f0b74
+o
+?vendor/symfony/dependency-injection/Attribute/Autoconfigure.php,2\8\28d8d94098f6afde2388eb79af1954fd2151c429
+Z
+*templates/Admin/admin_formations.html.twig,1\6\16bc9eae069357ddc563e4b334f876b183238343

@@ -12,8 +12,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminCategoriesController extends AbstractController
 {
 
+    /**
+     * @var CategorieRepository
+     */
     private $CategorieRepository;
 
+    /**
+     * @param CategorieRepository $CategorieRepository
+     */
     public function __construct(CategorieRepository $CategorieRepository)
     {
         $this->CategorieRepository = $CategorieRepository;
@@ -33,6 +39,7 @@ class AdminCategoriesController extends AbstractController
 
     /**
      * @Route ("/admin/categories/{id}/supprimer", name="admin.categories.supprimer")
+     * @param Categorie $categorie
      * @return Response
      */
     public function supprimerCategorie(Categorie $categorie ) : Response
@@ -49,6 +56,7 @@ class AdminCategoriesController extends AbstractController
 
     /**
      * @Route ("/admin/categorie/ajouter", name="admin.categorie.ajouter")
+     * @param Request $request
      * @return Response
      */
     public function ajouterCategorie(Request $request ) : Response

@@ -20,8 +20,17 @@ use Symfony\Component\Security\Http\EntryPoint\AuthenticationEntryPointInterface
 
 class KeycloakAuthenticator extends OAuth2Authenticator implements AuthenticationEntryPointInterface
 {
+    /**
+     * @var ClientRegistry
+     */
     private $clientRegistry;
+    /**
+     * @var EntityManagerInterface
+     */
     private $entityManager;
+    /**
+     * @var RouterInterface
+     */
     private $router;
 
     /**
@@ -37,16 +46,29 @@ class KeycloakAuthenticator extends OAuth2Authenticator implements Authenticatio
     }
 
 
+    /**
+     * @param Request $request
+     * @param AuthenticationException|null $authException
+     * @return RedirectResponse
+     */
     public function start(Request $request, AuthenticationException $authException = null)
     {
         return new RedirectResponse('/oauth/login', Response::HTTP_TEMPORARY_REDIRECT);
     }
 
+    /**
+     * @param Request $request
+     * @return bool|null
+     */
     public function supports(Request $request): ?bool
     {
         return  $request->attributes->get('_route') === 'oauth.check';
     }
 
+    /**
+     * @param Request $request
+     * @return Passport
+     */
     public function authenticate(Request $request): Passport {
         $client = $this->clientRegistry->getClient('keycloak');
         $accessToken = $this->fetchAccessToken($client);
@@ -87,12 +109,23 @@ class KeycloakAuthenticator extends OAuth2Authenticator implements Authenticatio
         );
     }
 
+    /**
+     * @param Request $request
+     * @param TokenInterface $token
+     * @param string $firewallName
+     * @return Response|null
+     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         $targetUrl = $this->router->generate('admin.formations');
         return new RedirectResponse($targetUrl);
     }
 
+    /**
+     * @param Request $request
+     * @param AuthenticationException $exception
+     * @return Response|null
+     */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): ?Response
     {
         $message = strtr($exception->getMessageKey(), $exception->getMessageData());

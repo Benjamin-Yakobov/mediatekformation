@@ -12,6 +12,8 @@ class OAuthController extends AbstractController
 {
     /**
      * @Route("/oauth/login", name="oauth.login")
+     * @param ClientRegistry $clientRegistry
+     * @return RedirectResponse
      */
     public function index(ClientRegistry $clientRegistry ): RedirectResponse
     {
@@ -20,6 +22,9 @@ class OAuthController extends AbstractController
 
     /**
      * @Route("/oauth/callback", name="oauth.check")
+     * @param Request $request
+     * @param ClientRegistry $clientRegistry
+     * @return void
      */
     public function connectCheckAction(Request $request, ClientRegistry $clientRegistry)
     {
@@ -28,6 +33,7 @@ class OAuthController extends AbstractController
 
     /**
      * @Route("/logout", name="logout")
+     * @return void
      */
     public function logout()
     {

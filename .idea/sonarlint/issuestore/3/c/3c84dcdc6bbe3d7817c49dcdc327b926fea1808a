@@ -1,3 +1,4 @@
 
-™secrets:S6698 "SMake sure this PostgreSQL database password gets changed and removed from the code.(—Ö—ç8’‹£ùâ1J$25de19e6-233d-4b1a-8469-fa23137fbafb
-¡secrets:S6736&"VMake sure these Rabbit MQ credentials get revoked, changed, and removed from the code.(ä¿Îîúÿÿÿÿ8˜‹£ùâ1J$e1870dee-a09e-4886-b8c6-12441a699d42
+™secrets:S6698 "SMake sure this PostgreSQL database password gets changed and removed from the code.(—Ö—ç8’‹£ùâ1J$c848c881-5329-4b8b-b9dd-9bfbfe3b3b1f
+™secrets:S6697"NMake sure this MySQL database password gets changed and removed from the code.(ŠÛüÿÿÿÿ8İ½ºŒå1J$a212a98e-9d18-4696-aef1-539c94b4e203
+¡secrets:S6736&"VMake sure these Rabbit MQ credentials get revoked, changed, and removed from the code.(ä¿Îîúÿÿÿÿ8˜‹£ùâ1J$1b656a24-ee7e-4a7b-8c31-852e9e11b196
