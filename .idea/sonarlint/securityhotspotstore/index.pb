@@ -128,3 +128,5 @@ o
 ?vendor/symfony/dependency-injection/Attribute/Autoconfigure.php,2\8\28d8d94098f6afde2388eb79af1954fd2151c429
 @
 public/.htaccess,c\9\c9fe70f275af093c7fb3ed73b451fadc91069bac
+9
+	.env.test,c\5\c589161bbc055e8f5fc7ed13aae8551821ece4b6
