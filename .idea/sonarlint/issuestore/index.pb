@@ -91,3 +91,5 @@ Y
 )templates/Admin/admin_playlists.html.twig,0\6\065ca4d02b50aa25ad2dcc6a092e11ddfca531c7
 Z
 *templates/Admin/admin_categories.html.twig,3\2\323b1eca98138b0f5c6583458d0486d8d73603ac
+M
+templates/pages/cgu.html.twig,7\a\7a44da48ef7fe7660a414ea39892aca7efb0933a
