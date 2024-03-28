@@ -4,7 +4,7 @@
 
 
     <div style="text-align: center; padding: 20px">
-        <button onclick="window.location.href = '{{ path('admin.playlists.ajouter') }}' ">Ajouter une playlist</button>
+        <button onclick="window.location.href = '{{ path('admin.playlists.ajouter') }}' " class="btn btn-primary mb-2 btn-sm"> Ajouter une playlist </button>
     </div>
 
 
@@ -14,18 +14,18 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     {% endfor %}
-    <table>
+    <table class="table table-striped">
         <caption>Tableau d'administration des playlists</caption>
         <thead>
             <tr>
                 <th>
                     Playlists
-                    <a href="{{ path('admin.playlists.sort', {champ:'name', ordre:'ASC'}) }}" ><</a>
-                    <a href="{{ path('admin.playlists.sort', {champ:'name', ordre:'DESC'}) }}">></a>
+                    <a href="{{ path('admin.playlists.sort', {champ:'name', ordre:'ASC'}) }}" class="btn btn-primary mb-2 btn-sm"> < </a>
+                    <a href="{{ path('admin.playlists.sort', {champ:'name', ordre:'DESC'}) }}" class="btn btn-primary mb-2 btn-sm"> > </a>
                     <form method="POST" action="{{ path('admin.playlists.rechercher', {champ:'name'}) }}">
                        <div>
                            <input name="valeur" placeholder="Playlist">
-                           <button type="submit">Rechercher</button>
+                           <button type="submit" class="btn btn-primary mb-2 btn-sm">Rechercher</button>
                        </div>
                     </form>
                 </th>
@@ -43,13 +43,13 @@
                     </form>
                 </th>
                 <th>
-                    <a href="{{ path('admin.playlists.sort', {champ:'numberFormations', ordre:'ASC'}) }}" ><</a>
-                    <a href="{{ path('admin.playlists.sort', {champ:'numberFormations', ordre:'DESC'}) }}">></a> <br>
+                    <a href="{{ path('admin.playlists.sort', {champ:'numberFormations', ordre:'ASC'}) }} " class="btn btn-primary mb-2 btn-sm"> < </a>
+                    <a href="{{ path('admin.playlists.sort', {champ:'numberFormations', ordre:'DESC'}) }}" class="btn btn-primary mb-2 btn-sm"> > </a> <br>
                     Nombre de formations &nbsp;
 
                 </th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -63,8 +63,8 @@
                         {% endfor %}
                     </td>
                     <td> &nbsp; {{ playlist.formations|length }}</td>
-                    <td><a href="{{ path('admin.playlists.modifier', {id:playlist.id}) }}">Modifier</a></td>
-                    <td><a href="{{ path('admin.playlists.supp', {id:playlist.id}) }}" onclick="return confirm('Voulez-vous supprimer la formation {{ playlist.name }} ?')">Supprimer</a></td>
+                    <td><a href="{{ path('admin.playlists.modifier', {id:playlist.id}) }}" class="btn btn-secondary">Modifier</a></td>
+                    <td><a href="{{ path('admin.playlists.supp', {id:playlist.id}) }}" onclick="return confirm('Voulez-vous supprimer la formation {{ playlist.name }} ?')" class="btn btn-danger">Supprimer</a></td>
                 </tr>
             {% endfor%}
         </tbody>

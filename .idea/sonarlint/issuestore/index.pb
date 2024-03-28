@@ -87,3 +87,5 @@ M
 public/index.php,0\e\0e61f67641b441bb3ee38e903c594d99cafa14b4
 b
 2templates/Admin/admin_formation_modifier.html.twig,3\d\3d17e8599d72c4c1a49cb6ab9b9688fb1000580c
+Y
+)templates/Admin/admin_playlists.html.twig,0\6\065ca4d02b50aa25ad2dcc6a092e11ddfca531c7
