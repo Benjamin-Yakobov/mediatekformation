@@ -83,3 +83,7 @@ Z
 	.env.test,c\5\c589161bbc055e8f5fc7ed13aae8551821ece4b6
 M
 templates/basefront.html.twig,1\6\16892ecdad9ae146b233e332c32c2d13e470a102
+@
+public/index.php,0\e\0e61f67641b441bb3ee38e903c594d99cafa14b4
+b
+2templates/Admin/admin_formation_modifier.html.twig,3\d\3d17e8599d72c4c1a49cb6ab9b9688fb1000580c
