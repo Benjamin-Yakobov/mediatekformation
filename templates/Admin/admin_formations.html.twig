@@ -5,7 +5,7 @@
         <button style="text-align: center" class="btn btn-primary mb-2 btn-sm" onclick="window.location.href = '{{ path('admin.formation.ajout') }}';"> Ajouter un formation </button>
     </div>
 
-    <table>
+    <table class="table table-striped">
         <caption>Tableau d'administration des formations</caption>
         <tr>
             <th>
@@ -48,8 +48,8 @@
                 <a href="{{ path('admin.formation.sort', {champ:'publishedAt', ordre:'ASC'}) }}" class="btn btn-primary mb-2 btn-sm"> < </a>
                 <a href="{{ path('admin.formation.sort', {champ:'publishedAt', ordre:'DESC'}) }}" class="btn btn-primary mb-2 btn-sm"> > </a>
             </th>
-            <th>Modifier</th>
-            <th>Supprimer</th>
+            <th></th>
+            <th></th>
         </tr>
 
         {% for formation in formations %}
