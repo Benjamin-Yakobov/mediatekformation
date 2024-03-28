@@ -64,7 +64,7 @@
                     </td>
                     <td> &nbsp; {{ playlist.formations|length }}</td>
                     <td><a href="{{ path('admin.playlists.modifier', {id:playlist.id}) }}" class="btn btn-secondary">Modifier</a></td>
-                    <td><a href="{{ path('admin.playlists.supp', {id:playlist.id}) }}" onclick="return confirm('Voulez-vous supprimer la formation {{ playlist.name }} ?')" class="btn btn-danger">Supprimer</a></td>
+                    <td><a href="{{ path('admin.playlists.supp', {id:playlist.id}) }}" onclick="return confirm('Voulez-vous supprimer la playlist {{ playlist.name }} ?')" class="btn btn-danger">Supprimer</a></td>
                 </tr>
             {% endfor%}
         </tbody>
