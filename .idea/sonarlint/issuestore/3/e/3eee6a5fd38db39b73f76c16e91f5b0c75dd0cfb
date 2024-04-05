@@ -1,8 +1,8 @@
 
-\	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8Ğˆİ€ä1
-\	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8Ğˆİ€ä1
-\	php:S1131""@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8Ñˆİ€ä1
-Xphp:S105"EReplace all tab characters in this file by sequences of white-spaces.8Ñˆİ€ä1
-e	php:S1784'"DExplicitly mention the visibility of this constructor "__construct".(•¾€Îüÿÿÿÿ8Òˆİ€ä1
-i	php:S1301C"MReplace this "switch" statement with "if" statements to increase readability.(“à»õ8Óˆİ€ä1
-Rphp:S131C"7Add a "case default" clause to this "switch" statement.(“à»õ8Ôˆİ€ä1
+‚	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8Ğˆİ€ä1J$4ea374f7-1f20-4737-9e9e-2cb8fcdd38aa
+‚	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8Ğˆİ€ä1J$b4794d31-5d5a-411e-b859-6b086a74374b
+‚	php:S1131""@Remove the useless trailing whitespaces at the end of this line.(óËµ¤8Ñˆİ€ä1J$6d81dea7-5768-410f-88db-90ce776e73c9
+~php:S105"EReplace all tab characters in this file by sequences of white-spaces.8Ñˆİ€ä1J$eccc0542-aa5d-4a6d-ab1c-207bdcca70d8
+‹	php:S1784'"DExplicitly mention the visibility of this constructor "__construct".(•¾€Îüÿÿÿÿ8Òˆİ€ä1J$1a3b606e-8f1b-41bd-b2e3-4e64e989b217
+	php:S1301C"MReplace this "switch" statement with "if" statements to increase readability.(“à»õ8Óˆİ€ä1J$d295ae43-3213-42a1-bcb6-e45958298444
+xphp:S131C"7Add a "case default" clause to this "switch" statement.(“à»õ8Ôˆİ€ä1J$560b71d1-fcc1-4a67-a799-f9f00a5ad048
