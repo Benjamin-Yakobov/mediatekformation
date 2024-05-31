@@ -20,7 +20,7 @@ class Formation
      * Début de chemin vers les images
      */
     private const CHEMIN_IMAGE = "https://i.ytimg.com/vi/";
-    
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -57,6 +57,11 @@ class Formation
      * @ORM\ManyToMany(targetEntity=Categorie::class, inversedBy="formations")
      */
     private $categories;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $posteurVideo;
 
     public function __construct()
     {
@@ -190,5 +195,17 @@ class Formation
         ->atPath('publishedAt')
         ->addViolation();
         }
+    }
+
+    public function getPosteurVideo(): ?string
+    {
+        return $this->posteurVideo;
+    }
+
+    public function setPosteurVideo(string $posteurVideo): self
+    {
+        $this->posteurVideo = $posteurVideo;
+
+        return $this;
     }
 }

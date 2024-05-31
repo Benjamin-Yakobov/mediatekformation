@@ -3,8 +3,35 @@
     <h1>{{ title }}</h1>
     {{ include('_admin_playlist_form.html.twig') }}
 
+    {# Si on me demande de permettre d'ajouter une formation  dans les pages de modification et d'ajout d'une playlist#}
+
+    {# <div style="text-align: center; padding: 20px">
+        <a href='{{ path('admin.formation.ajoutdepuisplaylist', {id:playlist.id})  }}' class="btn btn-primary mb-2 btn-sm">Ajouter une formation</a>
+    </div> #}
+
+    <!-- Si on me demande de permettre de supprimer une formation dans les pages de modification et d'ajout d'une playlist -->
+
+
+                {# <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Les formations de la playlist</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for formation in formations %}
+                        <tr>
+                            <td>{{ formation.title }}</td>
+                            <td><a href="{{ path('admin.formation.supprimer', {id:formation.id, redirection:'admin_playlist'}) }}" class="btn btn-danger">Supprimer</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>#}
+
+    <!-- Fin si on me demande de permettre d'ajouter une formation dans les pages de modification et d'ajout d'une playlist -->
+
     {% for formation in formations %}
-        {{ formation }}<br>
+            {{ formation.title }} <br>
     {% endfor %}
 
 {% endblock %}

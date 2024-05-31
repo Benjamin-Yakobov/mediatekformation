@@ -83,7 +83,8 @@ class AdminPlaylistsController extends AbstractController
         return $this->render("Admin/admin_playlist_modifier.html.twig", [
             'formPlaylist' => $formPlaylist->createView(),
             'title' => $title,
-            'formations' => $playlist->getFormations()
+            'formations' => $playlist->getFormations(),
+            'playlist' => $playlist // a ajouter si on me demande de pouvoir ajouter une formation a partire de la page des playlists
         ]);
     }
 

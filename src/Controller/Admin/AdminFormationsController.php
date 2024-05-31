@@ -3,11 +3,15 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Formation;
+use App\Entity\Playlist;
 use App\Form\FormationType;
 use App\Repository\CategorieRepository;
 use App\Repository\FormationRepository;
+use App\Repository\PlaylistRepository;
+use PhpParser\Node\Scalar\String_;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,14 +23,16 @@ class AdminFormationsController extends AbstractController
      */
     private $FormationRepository;
 
+    private $PlaylistRepository; //si
     /**
      * @param FormationRepository $FormationRepository
      * @param CategorieRepository $CategorieRepository
      */
-    public function  __construct( FormationRepository $FormationRepository, CategorieRepository $CategorieRepository)
+    public function  __construct( FormationRepository $FormationRepository, CategorieRepository $CategorieRepository, PlaylistRepository $playlistRepository)
     {
         $this->FormationRepository = $FormationRepository;
         $this->CategorieRepository = $CategorieRepository;
+        $this->PlaylistRepository = $playlistRepository; // si
     }
 
     /**
@@ -45,16 +51,44 @@ class AdminFormationsController extends AbstractController
     }
 
     /**
-     * @Route("/admin/formations/supprimer/{id}", name="admin.formation.supprimer")
+     *  Si on me demande de permettre de supprimer une formation dans les pages de modification et d'ajout d'une playlist
+     * @Route("/admin/formations/supprimer/{id}/{redirection}", name="admin.formation.supprimer")
      * @param Formation $formation
      * @return Response
      */
-    public function supprimerFormation(Formation $formation) : Response
+    /**
+    public function supprimerFormation(Formation $formation, string $redirection, RequestStack $requestStack) : Response
+    {
+        $this->FormationRepository->remove($formation, true);
+
+        if($redirection == "admin_formations") {
+            return $this->redirectToRoute('admin.formations');
+        }else{
+            // Recharge la même page
+            $request = $requestStack->getCurrentRequest();
+            $referer = $request->headers->get('referer');
+
+            // Redirige vers la page précédente
+            return $this->redirect($referer);
+        }
+    }
+     */
+
+
+
+    /**
+     * @Route("/admin/formations/supprimer/{id}/{redirection}", name="admin.formation.supprimer")
+     * @param Formation $formation
+     * @return Response
+     */
+    public function supprimerFormation(Formation $formation, string $redirection, RequestStack $requestStack) : Response
     {
         $this->FormationRepository->remove($formation, true);
 
         return $this->redirectToRoute('admin.formations');
     }
+
+
 
     /**
      * @Route("/admin/formation/modifier/{id}", name="admin.formation.modifier")
@@ -140,5 +174,39 @@ class AdminFormationsController extends AbstractController
             'formFormation' => $formFormation->createView()
         ]);
     }
+
+    /**
+     * Si on me demande de permettre d'ajouter une formation depuis les pages de modification et d'ajout d'une playlist
+     * Ajout d'une formation depuis les pages de modification et d'ajout d'une playlist
+     * @Route("/admin/formations/ajout/{id}", name="admin.formation.ajoutdepuisplaylist")
+     * @param Request $request
+     * @return Response
+     */
+    /**
+    public function ajouter(string $id, Request $request) : Response
+    {
+        $title = "Ajouter une formation";
+        $formation = new Formation();
+        $playlist = $this->PlaylistRepository->find($id);
+        $formation->setPlaylist($playlist);
+
+        $formFormation = $this->createForm(FormationType::class, $formation);
+
+        $formFormation->remove('playlist');
+
+        $formFormation->handleRequest($request);
+
+        if($formFormation->isSubmitted() && $formFormation->isValid()){
+            $this->FormationRepository->add($formation, true);
+            return $this->redirectToRoute('admin.formations');
+        }
+
+        return $this->render("Admin/admin_formation_modifier.html.twig", [
+            'title' => $title,
+            'formation' => $formation,
+            'formFormation' => $formFormation->createView()
+        ]);
+    }
+     */
 
 }

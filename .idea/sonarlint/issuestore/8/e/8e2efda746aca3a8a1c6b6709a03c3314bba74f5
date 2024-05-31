@@ -1,5 +1,10 @@
 
-£php:S116"]Rename this field "$FormationRepository" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(ò¥Ÿşÿÿÿÿ8œ¶ä€ä1J$bf399aa3-0a6c-4303-9007-df2d45a6d106
-¤php:S117"cRename this parameter "$FormationRepository" to match the regular expression ^[a-z_][a-zA-Z0-9_]*$.(İâÈ8¶ä€ä1J$da25c1be-cb95-454d-90f7-7abf32316d6f
-¤php:S117"cRename this parameter "$CategorieRepository" to match the regular expression ^[a-z_][a-zA-Z0-9_]*$.(İâÈ8¶ä€ä1J$7c2c97b1-a797-48dc-a9d7-910c5408ca3a
-}	php:S1192)"aDefine a constant instead of duplicating this literal "Admin/admin_formations.html.twig" 3 times.(õïÑ8’½Œå1
+kphp:S103"KSplit this 157 characters long line (which is greater than 120 authorized).(‰øÙÙüÿÿÿÿ8£öè°ú1
+kphp:S1036"KSplit this 121 characters long line (which is greater than 120 authorized).(‚á¦æøÿÿÿÿ8£öè°ú1
+}php:S116"]Rename this field "$FormationRepository" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(ò¥Ÿşÿÿÿÿ8£öè°ú1
+|php:S116"\Rename this field "$PlaylistRepository" to match the regular expression ^[a-z][a-zA-Z0-9]*$.(Şáæ´ûÿÿÿÿ8£öè°ú1
+ƒphp:S117"cRename this parameter "$FormationRepository" to match the regular expression ^[a-z_][a-zA-Z0-9_]*$.(‰øÙÙüÿÿÿÿ8¤öè°ú1
+ƒphp:S117"cRename this parameter "$CategorieRepository" to match the regular expression ^[a-z_][a-zA-Z0-9_]*$.(‰øÙÙüÿÿÿÿ8¤öè°ú1
+}	php:S1192/"aDefine a constant instead of duplicating this literal "Admin/admin_formations.html.twig" 3 times.(õïÑ8¥öè°ú1
+?php:S125;"Remove this commented out code.(Ù„ÂÄüÿÿÿÿ8¥öè°ú1
+@php:S125¹"Remove this commented out code.(Ù„ÂÄüÿÿÿÿ8¥öè°ú1

@@ -132,6 +132,19 @@ class FormationRepository extends ServiceEntityRepository
                 ->getResult();        
     }
 
+    /**
+     * Retourne les formations qui on été ajoutées entre deux dates.
+     */
+    public function findFormationsBetweenDates(\DateTimeInterface $dateTimeDebut, \DateTimeInterface  $dateTimeFin)
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.publishedAt BETWEEN :start AND :end')
+            ->setParameter('start', $dateTimeDebut)
+            ->setParameter('end', $dateTimeFin)
+            ->getQuery()
+            ->getResult();
+    }
+
 
 
 }

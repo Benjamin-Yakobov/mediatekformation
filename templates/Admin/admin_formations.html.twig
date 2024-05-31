@@ -63,7 +63,7 @@
                 </td>
                 <td>{{ formation.getPublishedAtString }}</td>
                 <td><a href="{{ path('admin.formation.modifier', {id:formation.id}) }}" class="btn btn-secondary"> Modifier </a></td>
-                <td><a href="{{ path('admin.formation.supprimer', {id:formation.id}) }}" onclick="return confirm('Voulez-vous supprimer la formation {{ formation.title }} ?')" class="btn btn-danger"> Supprimer </a></td>
+                <td><a href="{{ path('admin.formation.supprimer', {id:formation.id, redirection:'admin_formations'}) }}" onclick="return confirm('Voulez-vous supprimer la formation {{ formation.title }} ?')" class="btn btn-danger"> Supprimer </a></td>
             </tr>
         {% endfor %}
     </table>

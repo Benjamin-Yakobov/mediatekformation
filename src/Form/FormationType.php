@@ -29,6 +29,7 @@ class FormationType extends AbstractType
             ->add('description')
             ->add('playlist', null, ['required' => true])
             ->add('categories')
+            ->add("posteurVideo")
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
         ;
     }

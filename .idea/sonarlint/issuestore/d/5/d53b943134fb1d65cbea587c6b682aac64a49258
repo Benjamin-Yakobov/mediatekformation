@@ -1,4 +1,5 @@
 
-‚	php:S1131W"@Remove the useless trailing whitespaces at the end of this line.(†ú¤é8ü¸ĞÌã1J$06a9d51d-3cf6-4153-967d-eb129e21011a
-‡	php:S1131X"@Remove the useless trailing whitespaces at the end of this line.(æÀö€øÿÿÿÿ8ı¸ĞÌã1J$91a892bc-88c4-4cc1-bd79-4abc247d2743
-ˆ	php:S1192W"FDefine a constant instead of duplicating this literal "d/m/Y" 3 times.(†ú¤é8ş¸ĞÌã1J$526f2eb2-931d-4aaa-88d6-0583a816cd8b
+\	php:S1131\"@Remove the useless trailing whitespaces at the end of this line.(†ú¤é8ê‚îü1
+a	php:S1131]"@Remove the useless trailing whitespaces at the end of this line.(æÀö€øÿÿÿÿ8ë‚îü1
+b	php:S1192\"FDefine a constant instead of duplicating this literal "d/m/Y" 3 times.(†ú¤é8ì‚îü1
+	php:S1448"eClass "Formation" has 22 methods, which is greater than 20 authorized. Split it into smaller classes.(²”Á¨8í‚îü1

@@ -30,10 +30,10 @@
                         </div>
                     </form>                    
                 </th>
-                <th class="text-left align-top" scope="col">
+                <th class="text-left align-top" scope="col" style="padding-top: 40px">
                     catégories
                     <form class="form-inline mt-1" method="POST" action="{{ path('formations.findallcontain', {champ:'id', table:'categories'}) }}">
-                        <select class="form-select form-select-sm" name="recherche" id="recherche" onchange="this.form.submit()">
+                        <select class="form-select form-select-sm" name="recherche" id="recherche" onchange="this.form.submit()" >
                             <option value=""></option>
                             {% for categorie in categories %}
                                 <option 
@@ -44,23 +44,49 @@
                                 </option>
                             {% endfor %}
                         </select>                    
-                    </form>            
+                    </form>
+
                 </th>
                 <th class="text-center align-top" scope="col">
                     date<br />
                     <a href="{{ path('formations.sort', {champ:'publishedAt', ordre:'ASC'}) }}" class="btn btn-info btn-sm active" role="button" aria-pressed="true"><</a>
-                    <a href="{{ path('formations.sort', {champ:'publishedAt', ordre:'DESC'}) }}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">></a>                    
+                    <a href="{{ path('formations.sort', {champ:'publishedAt', ordre:'DESC'}) }}" class="btn btn-info btn-sm active" role="button" aria-pressed="true">></a>
+
+                    {# Si on me demande d'ajouter la possibilité de rechercher les formations entre 2 dates. #}
+                    {# Formulaire permettant de filtrer les formations comprises entre deux dates saisies #}
+                    {# <div style="margin-top: 20px">
+                    <form method="POST" action="{{ path('findFormationsBetweenDates')}}">
+                        <div style="display: flex">
+                            <label for="start" style="margin-right: 10px">Du</label>
+                            <input type="date" id="start" name="date_debut" value=""/>
+                        </div>
+
+                        <br>
+
+                        <div style="display: flex">
+                            <label for="end" style="margin-right: 10px">Au</label>
+                            <input type="date" id="end" name="date_fin" value=""/>
+                        </div>
+
+                        <button type="submit" style="margin-top: 10px;">Rechercher</button>
+                    </form>
+                </div> #}
+
+
                 </th>
                 <th class="text-center align-top" scope="col">
                     &nbsp;
                 </th>
+                <th>Auteur</th>
             </tr>
         </thead>
         <tbody>
+        <!-- Boucle sur les formations -->
             {% for formation in formations %}
                 <tr class="align-middle">
                     <td>
                         <h5 class="text-info">
+                            {# <a href="{{ path('formations.showone', {'id': formation.id}) }}">{{ formation.title }}</a> #}{# si on me demande mettre le lien aussi sur le titre de la formation (en plus du lien sur la miniature) #}
                             {{ formation.title }}
                         </h5>
                     </td>
@@ -78,11 +104,14 @@
                     <td class="text-center">
                         {% if formation.miniature %}
                             <a href="{{ path('formations.showone', {id:formation.id}) }}">
-                                <img src="{{ formation.miniature }}" alt="foramtion">
+                                <img src="{{ formation.miniature }}" alt="formation">
                                 <span style="display: none;">Miniatures des Vidéos de Formations</span>
                             </a>
                         {% endif %}
                     </td>
+                     <td><a href="{{ path('formations.commenter') }}" class="btn btn-success">Commenter</a></td>
+
+                    <td>{{ formation.posteurVideo }}</td>
                 </tr>
             {% endfor %}
         </tbody>

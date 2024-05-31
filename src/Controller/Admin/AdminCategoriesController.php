@@ -72,6 +72,4 @@ class AdminCategoriesController extends AbstractController
 
         return $this->redirectToRoute('admin.categories');
     }
-
-    // Test si le déploiement continu fonctionne toujour.
 }
